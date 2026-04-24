@@ -17,7 +17,7 @@ A production-style expense-sharing platform — 4 backend services, 1 React fron
 [![Socket.IO](https://img.shields.io/badge/Socket.IO-010101?logo=socket.io&logoColor=white)](#)
 [![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)](#)
 
-**[Live Demo](https://www.owesync.in)** · **[Demo Video](<your-video-url>)** · **[LinkedIn](<your-linkedin-url>)**
+**[Live Demo](https://www.owesync.in)** · **[Demo Video](<your-video-url>)** · 
 
 </div>
 
@@ -211,14 +211,4 @@ Because Compose restarts only the affected service, the rest of the stack keeps 
 Each service exposes a `/health` endpoint (including `/health/rabbitmq` for consumers) so the orchestrator can gate traffic until downstream dependencies are reachable.
 
 ---
-
-## Contact
-
-<div align="center">
-
-**Abhinav Pandey**
-
-[LinkedIn](<your-linkedin-url>) · [Email](mailto:rsumitaj@gmail.com) · [Portfolio](<your-portfolio-url>)
-
-</div>
 
