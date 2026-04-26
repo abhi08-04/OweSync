@@ -102,7 +102,7 @@ OweSync runs as **four backend services + one frontend**, each with its own MySQ
 | **Core** | Groups, expenses, splits, settlements, activity feed (SSE) | Fastify · TypeScript · MySQL · Prisma · RabbitMQ | `6001` | [🔗 OweSync-Core-Service](https://github.com/abhi08-04/OweSync-Core-Service) |
 | **User** | Auth, profiles, Google OAuth, sessions, friends | Fastify · TypeScript · MySQL · Redis · JWT · bcrypt | `3000` | [🔗 OweSync-User-Service](https://github.com/abhi08-04/OweSync-User-Service) |
 | **Chat** | Real-time conversations, media, push notifications | Fastify · TypeScript · MySQL · Socket.IO · web-push | `7000` | [🔗 OweSync-Chat-Service](https://github.com/abhi08-04/OweSync-Chat-Service) |
-| **Mail** | Async transactional email (DB-less consumer) | Fastify · TypeScript · Nodemailer · EJS | `5000` | [🔗 OweSync-Mail-Service](https://github.com/abhi08-04/OweSync-Mail-Service) |
+| **Mail** | Async transactional email, delivery audit + SendGrid webhooks | Fastify · TypeScript · MySQL · Prisma · Nodemailer · EJS | `5000` | [🔗 OweSync-Mail-Service](https://github.com/abhi08-04/OweSync-Mail-Service) |
 | **Frontend** | SPA + PWA | React 18 · Vite · TypeScript · Tailwind · Radix · Recharts | `80 / 443` | [🔗 OweSync-Frontend](https://github.com/abhi08-04/OweSync-Frontend) |
 
 ---
@@ -179,6 +179,14 @@ The transactional heart of the platform — groups, members, expenses, splits, s
 </div>
 
 Conversations (direct + group), participants, messages (text / image / file / sticker), and push subscriptions. `users_replica` here is the same denormalization pattern — Chat never makes a synchronous call to User to render a sender's name or avatar.
+
+### Mail Service
+
+<div align="center">
+  <img src="./diagrams/mail_dbdiagram.png" alt="Mail Service ER diagram" width="900" />
+</div>
+
+Outbound mail lifecycle: each consumed Rabbit message becomes a `mail_audits` row (`MailStatus` from queue through SMTP, delivery, bounces, and poison handling). `mail_audit_events` stores an append-only timeline per audit (consumer progress, webhook payloads, errors) so ops can reconstruct what happened without rereading the broker.
 
 ---
 
