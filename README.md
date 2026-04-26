@@ -17,7 +17,7 @@ A production-style expense-sharing platform — 4 backend services, 1 React fron
 [![Socket.IO](https://img.shields.io/badge/Socket.IO-010101?logo=socket.io&logoColor=white)](#)
 [![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)](#)
 
-**[Live Demo](https://www.owesync.in)** · **[Demo Video](<your-video-url>)** · 
+**[Live Demo](https://www.owesync.in)** · [![Abhinav Pandey on LinkedIn](https://img.shields.io/badge/Abhinav%20Pandey-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/abhinav-mnnit) · [![Ritik Choudhary on LinkedIn](https://img.shields.io/badge/Ritik%20Choudhary-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ritik2974/)
 
 </div>
 
@@ -97,13 +97,13 @@ OweSync runs as **four backend services + one frontend**, each with its own MySQ
 
 ## The Services
 
-| Service | Responsibility | Stack | Port | Repo |
-|---|---|---|---|---|
-| **Core** | Groups, expenses, splits, settlements, activity feed (SSE) | Fastify · TypeScript · MySQL · Prisma · RabbitMQ | `6001` | [🔗 OweSync-Core-Service](https://github.com/abhi08-04/OweSync-Core-Service) |
-| **User** | Auth, profiles, Google OAuth, sessions, friends | Fastify · TypeScript · MySQL · Redis · JWT · bcrypt | `3000` | [🔗 OweSync-User-Service](https://github.com/abhi08-04/OweSync-User-Service) |
-| **Chat** | Real-time conversations, media, push notifications | Fastify · TypeScript · MySQL · Socket.IO · web-push | `7000` | [🔗 OweSync-Chat-Service](https://github.com/abhi08-04/OweSync-Chat-Service) |
-| **Mail** | Async transactional email, delivery audit + SendGrid webhooks | Fastify · TypeScript · MySQL · Prisma · Nodemailer · EJS | `5000` | [🔗 OweSync-Mail-Service](https://github.com/abhi08-04/OweSync-Mail-Service) |
-| **Frontend** | SPA + PWA | React 18 · Vite · TypeScript · Tailwind · Radix · Recharts | `80 / 443` | [🔗 OweSync-Frontend](https://github.com/abhi08-04/OweSync-Frontend) |
+| Service | Responsibility | Stack |
+|---|---|---|
+| **Core** | Groups, expenses, splits, settlements, activity feed (SSE) | Fastify · TypeScript · MySQL · Prisma · RabbitMQ |
+| **User** | Auth, profiles, Google OAuth, sessions, friends | Fastify · TypeScript · MySQL · Redis · JWT · bcrypt |
+| **Chat** | Real-time conversations, media, push notifications | Fastify · TypeScript · MySQL · Socket.IO · web-push |
+| **Mail** | Async transactional email, delivery audit + SendGrid webhooks | Fastify · TypeScript · MySQL · Prisma · Nodemailer · EJS |
+| **Frontend** | SPA + PWA | React 18 · Vite · TypeScript · Tailwind · Radix · Recharts |
 
 ---
 
